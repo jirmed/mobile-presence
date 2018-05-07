@@ -1,0 +1,8 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+        controllerName="cz.muni.fi.pb138.mobilePresence.controller.Master">
+    <Page>
+        <Text text="Text1TextText"></Text>
+    </Page>
+</mvc:View>

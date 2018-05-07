@@ -1,0 +1,109 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "cz.muni.fi.pb138.mobilePresence",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "ach"
+    },
+
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "cz.muni.fi.pb138.mobilePresence.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "idApp"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "resourceRoots" : {
+            "it.designfuture.chartjs" : "./thirdparty/it/designfuture/chartjs/" 
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "cz.muni.fi.pb138.mobilePresence.i18n.i18n"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "cz.muni.fi.pb138.mobilePresence.view",
+                "controlId": "idApp",
+                "controlAggregation": "detailPages",
+                "transition": "slide"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "master",
+                    "target": [
+                        "master",
+                        "detail"
+                    ]
+                },
+                {
+                    "pattern": "",
+                    "name": "detail",
+                    "target": [
+                        "master",
+                        "detail"
+                    ]
+                }       
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Master",
+                    "viewLevel": 1,
+                    "controlAggregation": "masterPages"
+                },
+                "detail": {
+                    "viewName": "Detail",
+                    "viewLevel": 2,
+                    "controlAggregation": "detailPages"
+                }
+            }       
+        },
+        "resources": {
+            "css": [{
+                    "uri": "css/style.css"
+                }]
+        }
+    }
+}
