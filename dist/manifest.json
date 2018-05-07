@@ -1,110 +1,114 @@
 {
-	"_version": "1.8.0",
-	"sap.app": {
-		"id": "cz.muni.fi.pb138.mobilePresence",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"applicationVersion": {
-			"version": "1.0.0"
-		},
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"resources": "resources.json",
-		"ach": "ach"
-	},
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "cz.muni.fi.pb138.mobilePresence",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "ach"
+    },
 
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {
-			"icon": "",
-			"favIcon": "",
-			"phone": "",
-			"phone@2": "",
-			"tablet": "",
-			"tablet@2": ""
-		},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
 
-	"sap.ui5": {
-		"rootView": {
-			"viewName": "cz.muni.fi.pb138.mobilePresence.view.App",
-			"type": "XML"
-		},
-		"dependencies": {
-			"minUI5Version": "1.30.0",
-			"libs": {
-				"sap.ui.core": {},
-				"sap.m": {},
-				"sap.ui.layout": {}
-			}
-		},
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "cz.muni.fi.pb138.mobilePresence.i18n.i18n"
-				}
-			}
-		},
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
-				"viewPath": "cz.muni.fi.pb138.mobilePresence.view",
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "cz.muni.fi.pb138.mobilePresence.view.App",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "it.designfuture.chartjs": {}
+            }
+        },
+        "resourceRoots": {
+            "it.designfuture.chartjs": "./it/designfuture/chartjs"
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "cz.muni.fi.pb138.mobilePresence.i18n.i18n"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "cz.muni.fi.pb138.mobilePresence.view",
                 "controlId": "idApp",
                 "controlAggregation": "pages",
                 "transition": "slide"
-			},
-			"routes": [
+            },
+            "routes": [
                 {
                     "pattern": "",
                     "name": "master",
                     "target": 
-                    [
-                        "master"
-                    ]
+                            [
+                                "master",
+                                "detail"
+                            ]
                 },
 
                 {
                     "pattern": "detail/{CityId}",
                     "name": "detail",
                     "target": 
-                    [
-                        "master",
-                        "detail"
-                    ]
+                            [
+                                "master",
+                                "detail"
+                            ]
                 }
-			],
-			"targets": {
-	                "master": 
-	                {
-	                    "viewName": "Master",
-	                    "viewLevel": 1,
-	                    "controlAggregation": "masterPages"
-	                },
+            ],
+            "targets": {
+                "master": 
+                        {
+                            "viewName": "Master",
+                            "viewLevel": 1,
+                            "controlAggregation": "masterPages"
+                        },
 
-	                "detail": 
-	                {
-	                    "viewName": "Detail",
-	                    "viewLevel": 2,
-	                    "controlAggregation": "detailPages"
-	                }
-    
-			}
-		},
-		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
-		}
-	}
+                "detail": 
+                        {
+                            "viewName": "Detail",
+                            "viewLevel": 2,
+                            "controlAggregation": "detailPages"
+                        }
+            }
+        },
+        "resources": {
+            "css": [{
+                    "uri": "css/style.css"
+                }]
+        }
+    }
 }

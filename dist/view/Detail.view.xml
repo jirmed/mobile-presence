@@ -1,7 +1,30 @@
 <mvc:View
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="cz.muni.fi.pb138.mobilePresence.controller.Detail">
-	<Text text="DetailDetailDetail" />
-	
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:lab="it.designfuture.chartjs"
+    controllerName="cz.muni.fi.pb138.mobilePresence.controller.Detail">
+    <Text text="{
+        path: 'temp>/lineChart/datasets/0/data',
+        formatter: '.formatter.test'
+    }" />
+    <lab:LineChartJS
+        id="line_chart"
+        datasets="{
+        path: 'temp>/lineChart/datasets/0/data',
+        formatter: '.formatter.test'
+}"
+        labels="{temp>/lineChart/labels}"
+        titleDisplay="true"
+        titleText="Line Chart Example"
+        onLegendItemClick="onLegendItemClick"
+        onLegendItemHover="onLegendItemHover"
+        onClick="onClick"
+        onHover="onHover"
+        tooltipEnabled="true"
+        onAnimationProgress="onAnimationProgress"
+        onAnimationComplete="onAnimationComplete"
+        showLines="true"
+        spanGaps="true">
+    </lab:LineChartJS>
+
 </mvc:View>
