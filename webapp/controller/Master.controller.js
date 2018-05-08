@@ -6,6 +6,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"],
                     {
 //				oFormatter : Formatter,
                         onInit: function (oEvent) {
+                        },
+                        onClick: function (oEvent) {
+                            console.log(oEvent.getSource().getBindingContext());
                         }
                         /*        
                          onPressHello : function() {

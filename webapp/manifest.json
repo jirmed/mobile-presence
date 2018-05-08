@@ -9,6 +9,14 @@
         },
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
+        "dataSources": 
+                {
+                    "mainsource": 
+                            {
+                                "uri": "service/presence.json",
+                                "type": "JSON"
+                            }
+                },
         "resources": "resources.json",
         "ach": "ach"
     },
@@ -57,7 +65,11 @@
                 "settings": {
                     "bundleName": "cz.muni.fi.pb138.mobilePresence.i18n.i18n"
                 }
-            }
+            },
+            "": 
+                    {
+                        "dataSource": "mainsource"
+                    } 
         },
         "routing": {
             "config": {

@@ -4,27 +4,19 @@
     xmlns:lab="it.designfuture.chartjs"
     controllerName="cz.muni.fi.pb138.mobilePresence.controller.Detail">
     <Text text="{
-        path: 'temp>/lineChart/datasets/0/data',
-        formatter: '.formatter.test'
+        path: '/data/0/name'
     }" />
+    <Text text="{weekend}"/>
     <lab:LineChartJS
         id="line_chart"
         datasets="{
-        path: 'temp>/lineChart/datasets/0/data',
-        formatter: '.formatter.test'
+        path: '/data/0/',
+        formatter: '.formatter.getDatasets'
 }"
-        labels="{temp>/lineChart/labels}"
+        labels="[6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
         titleDisplay="true"
-        titleText="Line Chart Example"
-        onLegendItemClick="onLegendItemClick"
-        onLegendItemHover="onLegendItemHover"
-        onClick="onClick"
-        onHover="onHover"
-        tooltipEnabled="true"
-        onAnimationProgress="onAnimationProgress"
-        onAnimationComplete="onAnimationComplete"
-        showLines="true"
-        spanGaps="true">
+        titleText="Text"
+    >
     </lab:LineChartJS>
 
 </mvc:View>
