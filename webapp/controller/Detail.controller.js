@@ -22,11 +22,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
                 onInit: function () {
                     var oModel = this.getOwnerComponent().getModel();
-//                   this.getView().setModel(oModel2,'mymodel');
-//                    var oModel2 = sap.ui.getCore().getModel("test");
-//                    this.getView().setModel(oModel2,"myModel");
-//                    console.log("My model");
-//                    console.log(oModel2);
                     var oContext = new sap.ui.model.Context(oModel, "/data/0/children/0");
                     this.getView().setBindingContext(oContext);
 

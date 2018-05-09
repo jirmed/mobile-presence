@@ -58,15 +58,16 @@ sap.ui.define([], function () {
             return input;
 //            return {};
         },
-        chartProperties: function (input, data) {
+        chartProperties: function (input, data, workday_i18n, weekend_i18n) {
 //                   console.log("chartProperties Input:");
 //                    console.log(input);
             var result = input;
 //                    console.log(result.datasets[0].label);
             if (result !== undefined && data!== undefined) {
-                result.datasets[0].label = data.name;
                 result.datasets[0].data = data.workday;
-                result.datasets[0].data = data.weekend;
+                result.datasets[0].label = workday_i18n;
+                result.datasets[1].data = data.weekend;
+                result.datasets[1].label = weekend_i18n;
             }
             return result;
         }

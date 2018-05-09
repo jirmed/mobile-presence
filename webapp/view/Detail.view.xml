@@ -7,14 +7,16 @@
     <Text text="{
         path: 'test1>/data/0/name/'
     }" />
-    <Text text="{chartjsData>/lineData}"/>
+    <Text text="{format_chartjs>/lineData/labels/}"/>
     <!--
         <acc:ChartJSControl width="400" height="200" responsive="true" chartType="Line" data="{chartjsData>/lineData}"/> 
     -->    
     <acc:ChartJSControl width="400" height="200" responsive="true" chartType="Line" 
                         data="{parts: [
-                            {path: 'chartjsData>/lineData'},
-                            {path: ''}
+                            {path: 'format_chartjs>/'},
+                            {path: ''},
+                            {path: 'i18n>workday'},
+                            {path: 'i18n>weekend'}
                         ],
                         formatter:'.formatter.chartProperties'}"/> 
     <!--    

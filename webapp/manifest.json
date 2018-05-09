@@ -15,6 +15,11 @@
                             {
                                 "uri": "service/presence.json",
                                 "type": "JSON"
+                            },
+                    "format_chartjs": 
+                            {
+                                "uri": "service/format_chartjs.json",
+                                "type": "JSON"
                             }
                 },
         "resources": "resources.json",
@@ -48,21 +53,17 @@
             "libs": {
                 "sap.ui.core": {},
                 "sap.m": {},
-                "sap.ui.layout": {},
-                "it.designfuture.chartjs": {}
+                "sap.ui.layout": {}
             }
-        },
-        "resourceRoots": {
-            "it.designfuture.chartjs": "./it/designfuture/chartjs"
         },
         "contentDensities": {
             "compact": true,
             "cozy": true
         },
-    "config": {
-      "chartjsModel": "/model/data_chartjs.json",
-      "c3jsModel": "/model/data_c3js.json"
-    },
+        "config": {
+            "chartjsModel": "/model/data_chartjs.json",
+            "c3jsModel": "/model/data_c3js.json"
+        },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
@@ -73,6 +74,10 @@
             "": 
                     {
                         "dataSource": "mainsource"
+                    },  
+            "format_chartjs": 
+                    {
+                        "dataSource": "format_chartjs"
                     } 
         },
         "routing": {
@@ -125,13 +130,9 @@
             "css": [{
                     "uri": "css/style.css"
                 }],
-      "js": [{
-        "uri": "/control/Chart.min.js"
-      }, {
-        "uri": "/control/d3.min.js"
-      }, {
-        "uri": "/control/c3.min.js"
-      }]
+            "js": [{
+                    "uri": "/control/Chart.min.js"
+                }]
         }
     }
 }
