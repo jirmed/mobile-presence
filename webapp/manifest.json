@@ -59,6 +59,10 @@
             "compact": true,
             "cozy": true
         },
+    "config": {
+      "chartjsModel": "/model/data_chartjs.json",
+      "c3jsModel": "/model/data_c3js.json"
+    },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
@@ -120,7 +124,14 @@
         "resources": {
             "css": [{
                     "uri": "css/style.css"
-                }]
+                }],
+      "js": [{
+        "uri": "/control/Chart.min.js"
+      }, {
+        "uri": "/control/d3.min.js"
+      }, {
+        "uri": "/control/c3.min.js"
+      }]
         }
     }
 }

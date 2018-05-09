@@ -2,21 +2,32 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:lab="it.designfuture.chartjs"
+    xmlns:acc="cz.muni.fi.pb138.mobilePresence.control"
     controllerName="cz.muni.fi.pb138.mobilePresence.controller.Detail">
     <Text text="{
-        path: '/data/0/name'
+        path: 'test1>/data/0/name/'
     }" />
-    <Text text="{weekend}"/>
-    <lab:LineChartJS
-        id="line_chart"
-        datasets="{
-        path: '/data/0/',
-        formatter: '.formatter.getDatasets'
-}"
-        labels="[6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
-        titleDisplay="true"
-        titleText="Text"
-    >
-    </lab:LineChartJS>
-
+    <Text text="{chartjsData>/lineData}"/>
+    <!--
+        <acc:ChartJSControl width="400" height="200" responsive="true" chartType="Line" data="{chartjsData>/lineData}"/> 
+    -->    
+    <acc:ChartJSControl width="400" height="200" responsive="true" chartType="Line" 
+                        data="{parts: [
+                            {path: 'chartjsData>/lineData'},
+                            {path: ''}
+                        ],
+                        formatter:'.formatter.chartProperties'}"/> 
+    <!--    
+        <lab:LineChartJS
+            id="line_chart"
+            datasets="{
+            path: 'test1>/',
+            formatter: '.formatter.getDatasets'
+    }"
+            labels="[6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
+            titleDisplay="true"
+            titleText="title"
+        >
+        </lab:LineChartJS>
+    -->
 </mvc:View>

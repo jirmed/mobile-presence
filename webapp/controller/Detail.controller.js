@@ -21,10 +21,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
                 formatter: Formatter,
 
                 onInit: function () {
-//                    var oModel2 = this.getOwnerComponent().getModel();
-//                    this.getView().setModel(oModel2,'mymodel');
-//                    var context3 = new sap.ui.model.Context(oModel2, "/0");
-//                    this.getView().setBindingContext(context3);
+                    var oModel = this.getOwnerComponent().getModel();
+//                   this.getView().setModel(oModel2,'mymodel');
+//                    var oModel2 = sap.ui.getCore().getModel("test");
+//                    this.getView().setModel(oModel2,"myModel");
+//                    console.log("My model");
+//                    console.log(oModel2);
+                    var oContext = new sap.ui.model.Context(oModel, "/data/0/children/0");
+                    this.getView().setBindingContext(oContext);
 
                 }
             });
