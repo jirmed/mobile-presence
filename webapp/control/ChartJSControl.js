@@ -105,7 +105,9 @@ sap.ui.define([
     },
 
     update: function() {
+      if (this._newCustomChart !== undefined) {
       this._newCustomChart.update();
+      }
     },
  
     

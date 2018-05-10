@@ -2,8 +2,7 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     controllerName="cz.muni.fi.pb138.mobilePresence.controller.Master">
-    <Page>
-        <Text text="Text1TextText"></Text>
+    <Page title="{i18n>place}">
         <Tree
             id="Tree"
             items="{path: '/'}"
