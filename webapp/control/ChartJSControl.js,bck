@@ -106,8 +106,6 @@ sap.ui.define([
 
     update: function() {
       this._newCustomChart.update();
-    },
- 
-    
+    }
   });
 });

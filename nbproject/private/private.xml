@@ -9,5 +9,16 @@
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/manifest.json</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/Master.view.xml</file>
         </group>
+        <group>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/manifest.json</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/i18n/i18n.properties</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/controller/Detail.controller.js</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/Component.js</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/service/presence.json</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/view/Detail.view.xml</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/controller/Master.controller.js</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/model/models.js</file>
+            <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/model/formatter.js</file>
+        </group>
     </open-files>
 </project-private>

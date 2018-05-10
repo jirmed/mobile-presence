@@ -62,8 +62,11 @@ sap.ui.define([], function () {
 //                   console.log("chartProperties Input:");
 //                    console.log(input);
             var result = input;
-//                    console.log(result.datasets[0].label);
-            if (result !== undefined && data!== undefined) {
+            console.log("Formatter");
+            console.log(result);
+            if (result.datasets !== undefined && data!== undefined) {
+                console.log('dataset')
+                console.log(data.workday)
                 result.datasets[0].data = data.workday;
                 result.datasets[0].label = workday_i18n;
                 result.datasets[1].data = data.weekend;

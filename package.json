@@ -16,6 +16,7 @@
     "grunt-eslint": "^17.3.1",
     "grunt-openui5": "^0.13.0",
     "grunt-shell": "^1.1.2",
-    "grunt-zip": "^0.16.2"
+    "grunt-zip": "^0.16.2",
+    "hoek": "^5.0.3"
   }
 }

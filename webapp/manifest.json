@@ -101,7 +101,7 @@
                 },
 
                 {
-                    "pattern": "detail/{CityId}",
+                    "pattern": "detail/:context:",
                     "name": "detail",
                     "target": 
                             [

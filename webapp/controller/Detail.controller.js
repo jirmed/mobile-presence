@@ -21,10 +21,32 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
                 formatter: Formatter,
 
                 onInit: function () {
+                    
+                    console.log("Chart");
+                    console.log(this.byId("chartId"))
+                    console.log(this.byId("chartId").getBinding());
+//                            getBinding("data").checkUpdate ( true )
+                    
+//                    var oModel = this.getOwnerComponent().getModel();
+//                    var oContext = new sap.ui.model.Context(oModel, "/data/0/children/0");
+//                    this.getView().setBindingContext(oContext);
+//                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                    var oRouter = this.getOwnerComponent().getRouter();
+                    oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
+                },
+                _onObjectMatched: function (oEvent) {
+//                    this.getView().bindElement({
+//                        path: "/" + oEvent.getParameter("arguments").placeId,
+//                        model: ""
+                    //                  });
+                    console.log("Arguments:");
+                    var sPath = decodeURIComponent(oEvent.getParameter("arguments").context);
+                    console.log(sPath);
                     var oModel = this.getOwnerComponent().getModel();
-                    var oContext = new sap.ui.model.Context(oModel, "/data/0/children/0");
-                    this.getView().setBindingContext(oContext);
-
+//                    var oContext = new sap.ui.model.Context(oModel, sPath);
+//                  this.getView().setBindingContext(oContext);
+//                    console.log(this.getView().byId("chartId"));
+                    this.getView().byId("chartId").bindElement(sPath);;
                 }
             });
         });
