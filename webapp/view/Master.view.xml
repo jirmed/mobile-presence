@@ -4,7 +4,7 @@
     controllerName="cz.muni.fi.pb138.mobilePresence.controller.Master">
     <Page title="{i18n>place}">
         <Tree
-            id="Tree"
+            id="treeId"
             items="{path: '/'}"
             busyIndicatorDelay="0">
             <StandardTreeItem 

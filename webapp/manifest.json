@@ -95,13 +95,12 @@
                     "name": "master",
                     "target": 
                             [
-                                "master",
-                                "detail"
+                                "master"
                             ]
                 },
 
                 {
-                    "pattern": "detail/:context:",
+                    "pattern": "detail/{context}",
                     "name": "detail",
                     "target": 
                             [

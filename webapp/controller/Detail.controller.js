@@ -10,7 +10,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
                 formatter: Formatter,
 
                 onInit: function () {
-                    
+
                     var oRouter = this.getOwnerComponent().getRouter();
                     oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
                 },
@@ -20,6 +20,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
                     var oContext = new sap.ui.model.Context(oModel, sPath);
                     this.getView().setBindingContext(oContext);
                     this.getView().byId("chartId").update();
+                },
+                onNavBack: function (oEvent) {
+                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                    oRouter.navTo("master");
                 }
             });
         });

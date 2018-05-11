@@ -3,7 +3,7 @@ sap.ui.define([], function () {
     return {
         chartProperties: function (input, data, workday_i18n, weekend_i18n) {
             var result = input;
-            if (result.datasets !== undefined && data !== undefined) {
+            if (result.datasets !== undefined && data !== null) {
                 result.datasets[0].data = data.workday;
                 result.datasets[0].label = workday_i18n;
                 result.datasets[1].data = data.weekend;

@@ -5,12 +5,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"],
                     {
                         onInit: function (oEvent) {
                         },
+                        onAfterRendering: function () {
+
+                            var oTree = this.getView().byId("treeId");
+                            oTree.expandToLevel(1);  // default expand level
+
+                        },
                         onClick: function (oEvent) {
                             var oContext = oEvent.getSource().getBindingContext();
                             var oItem = oEvent.getSource();
                             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                             var oContext = oItem.getBindingContext().getPath();
-                            oRouter.navTo("detail",{context:encodeURIComponent(oContext)},false);
+                            oRouter.navTo("detail", {context: encodeURIComponent(oContext)});
                         }
                     });
         });

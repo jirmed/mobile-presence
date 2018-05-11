@@ -4,10 +4,11 @@
     xmlns:lab="it.designfuture.chartjs"
     xmlns:acc="cz.muni.fi.pb138.mobilePresence.control"
     controllerName="cz.muni.fi.pb138.mobilePresence.controller.Detail">
-    <Page>
+    <Page showNavButton="{device>/system/phone}"
+    navButtonPress="onNavBack">
         <ObjectHeader 
             title="{name}"
-            intro = "{type}" >
+            condensed="true">
             <attributes>
                 <ObjectAttribute text="{path:'type', formatter:'.formatter.i18nText'}"/>
             </attributes>
