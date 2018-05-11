@@ -56,6 +56,6 @@ This project is licensed under the Apache License - see the [LICENSE](LICENSE) f
 ## Acknowledgments
 
 * This project was created as a school project for a course [PB138 Modern 
-Markup Languages and Their Applications] (https://is.muni.cz/predmet/fi/jaro2018/PB138?lang=en) 
+Markup Languages and Their Applications](https://is.muni.cz/predmet/fi/jaro2018/PB138?lang=en) 
 at [Faculty of Informatics, Masaryk University, Brno, Czech Republic](https://www.fi.muni.cz/index.html.en)
 * Base on [Brno Open Data](http://www.otevrenadata.cz)- public data source
