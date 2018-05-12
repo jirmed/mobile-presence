@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://fi.muni.cz/PB138/MobilePresence",
+    "type": "object",
+    "definitions": {
+        "day": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "title": "Day",
+                "description": "An array of of numbers of people in time range 6-23",
+                "maxItems": 18
+            }
+        },
+        "place": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "uniqueItem": "true",  
+                        "title": "id",
+                        "description": "Place ID (unique)",
+                        "examples": [
+                            "1"
+                        ]
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Place name",
+                        "examples": [
+                            "Brno"
+                        ]
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Type",
+                        "description": "Place type",
+                        "examples": [
+                            "city"
+                        ]
+                    },
+                    "workday": {
+                        "$ref": "#/definitions/day",
+                        "description": "Presence of people during a workday"
+                    },
+                    "weekend": {
+                        "$ref": "#/definitions/day",
+                        "description": "Presence of people during a weekend"
+                    },
+                    "children": {
+                        "$ref": "#/definitions/place",
+                        "description": "Children places"
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "data": {
+            "$ref": "#/definitions/place"
+        }
+    }
+}
