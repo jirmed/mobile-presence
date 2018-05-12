@@ -1,8 +1,18 @@
 <mvc:View
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-        controllerName="cz.muni.fi.pb138.mobilePresence.controller.Master">
-    <Page>
-        <Text text="Text1TextText"></Text>
+    controllerName="cz.muni.fi.pb138.mobilePresence.controller.Master">
+    <Page title="{i18n>place}">
+        <Tree
+            id="treeId"
+            items="{path: '/'}"
+            busyIndicatorDelay="0">
+            <StandardTreeItem 
+                title="{name}"
+                icon="sap-icon://addresses"
+                type="Active"
+                press="onClick"
+            />
+        </Tree>
     </Page>
 </mvc:View>

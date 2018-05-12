@@ -9,6 +9,19 @@
         },
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
+        "dataSources": 
+                {
+                    "mainsource": 
+                            {
+                                "uri": "service/presence.json",
+                                "type": "JSON"
+                            },
+                    "format_chartjs": 
+                            {
+                                "uri": "service/format_chartjs.json",
+                                "type": "JSON"
+                            }
+                },
         "resources": "resources.json",
         "ach": "ach"
     },
@@ -40,16 +53,16 @@
             "libs": {
                 "sap.ui.core": {},
                 "sap.m": {},
-                "sap.ui.layout": {},
-                "it.designfuture.chartjs": {}
+                "sap.ui.layout": {}
             }
-        },
-        "resourceRoots": {
-            "it.designfuture.chartjs": "./it/designfuture/chartjs"
         },
         "contentDensities": {
             "compact": true,
             "cozy": true
+        },
+        "config": {
+            "chartjsModel": "/model/data_chartjs.json",
+            "c3jsModel": "/model/data_c3js.json"
         },
         "models": {
             "i18n": {
@@ -57,7 +70,15 @@
                 "settings": {
                     "bundleName": "cz.muni.fi.pb138.mobilePresence.i18n.i18n"
                 }
-            }
+            },
+            "": 
+                    {
+                        "dataSource": "mainsource"
+                    },  
+            "format_chartjs": 
+                    {
+                        "dataSource": "format_chartjs"
+                    } 
         },
         "routing": {
             "config": {
@@ -74,13 +95,12 @@
                     "name": "master",
                     "target": 
                             [
-                                "master",
-                                "detail"
+                                "master"
                             ]
                 },
 
                 {
-                    "pattern": "detail/{CityId}",
+                    "pattern": "detail/{context}",
                     "name": "detail",
                     "target": 
                             [
@@ -108,6 +128,9 @@
         "resources": {
             "css": [{
                     "uri": "css/style.css"
+                }],
+            "js": [{
+                    "uri": "/control/Chart.min.js"
                 }]
         }
     }

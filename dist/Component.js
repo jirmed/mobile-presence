@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
-    "cz/muni/fi/pb138/mobilePresence/model/models"
-], function (UIComponent, Device, models) {
+    "cz/muni/fi/pb138/mobilePresence/model/models",
+    "sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, JSONModel) {
     "use strict";
 
     return UIComponent.extend("cz.muni.fi.pb138.mobilePresence.Component", {
