@@ -1,8 +1,0 @@
-<mvc:View
-    controllerName="cz.muni.fi.pb138.mobilePresence.controller.App"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
-    xmlns="sap.m">
-    <App id="idApp">
-    </App> 
-</mvc:View>

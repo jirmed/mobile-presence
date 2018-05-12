@@ -10,18 +10,25 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
                 formatter: Formatter,
 
                 onInit: function () {
-
+                    
+                    //attach callback on matched
                     var oRouter = this.getOwnerComponent().getRouter();
                     oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
                 },
                 _onObjectMatched: function (oEvent) {
+                    
+                    var oView = this.getView();
+
+                    //decode and set context from master
                     var sPath = decodeURIComponent(oEvent.getParameter("arguments").context);
-                    var oModel = this.getOwnerComponent().getModel();
-                    var oContext = new sap.ui.model.Context(oModel, sPath);
-                    this.getView().setBindingContext(oContext);
-                    this.getView().byId("chartId").update();
+                    var oContext = new sap.ui.model.Context(oView.getModel(), sPath);
+                    oView.setBindingContext(oContext);
+                    
+                    //update chart
+                    oView.byId("chartId").update();
                 },
                 onNavBack: function (oEvent) {
+                    //back to master
                     var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                     oRouter.navTo("master");
                 }
