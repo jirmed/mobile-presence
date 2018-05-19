@@ -14,16 +14,22 @@
             <file>file:/D:/Dokumenty/NetBeansProjects/mobile-presence/webapp/model/formatter.js</file>
         </group>
         <group name="NetBeansProjects">
-            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/Detail.view.xml</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/controller/Master.controller.js</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/model/formatter.js</file>
-            <file>file:/M:/NetBeansProjects/MobilePresence/README.md</file>
-            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/App.view.xml</file>
-            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/manifest.json</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/i18n/i18n_cs.properties</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/controller/Detail.controller.js</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/LICENSE</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/service/presence.json</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/index.html</file>
             <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/Master.view.xml</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/Detail.view.xml</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/README.md</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/controller/App.controller.js</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/i18n/i18n.properties</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/service/presence-schema.json</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/view/App.view.xml</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/manifest.json</file>
+            <file>file:/M:/NetBeansProjects/MobilePresence/webapp/i18n/i18n_en.properties</file>
         </group>
     </open-files>
 </project-private>

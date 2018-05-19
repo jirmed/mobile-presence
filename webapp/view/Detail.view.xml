@@ -13,25 +13,18 @@
                 <ObjectAttribute text="{path:'type', formatter:'.formatter.i18nText'}"/>
             </attributes>
         </ObjectHeader>
-        <Text text="{format_chartjs>/lineData/labels/}"/>
         <acc:ChartJSControl 
             id = "chartId"
             width="400" height="200" responsive="true" chartType="Line" 
+            options="{parts: [
+                    {path: 'format_chartjs>/options'}
+                    ],
+                    formatter:'.formatter.chartOptions'}"
             data="{parts: [
-                            {path: 'format_chartjs>/'},
-                            {path: ''},
-                            {path: 'i18n>workday'},
-                            {path: 'i18n>weekend'}
-                        ],
-                        formatter:'.formatter.chartProperties'}"
-            options="{
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }"/> 
+                    {path: 'format_chartjs>/data'},
+                    {path: ''}
+                    ],
+                    formatter:'.formatter.chartData'}"
+        /> 
     </Page>
 </mvc:View>
