@@ -3,11 +3,10 @@
 sap.ui.define([
     "cz/muni/fi/pb138/mobilePresence/model/formatter",
     "sap/ui/model/resource/ResourceModel",
-    "cz/muni/fi/pb138/mobilePresence/model/i18n",
     "sap/ui/thirdparty/sinon",
     "sap/ui/thirdparty/sinon-qunit",
     "sap/ui/model/resource/ResourceModel",
-], function (formatter, ResourceModel, i18n) {
+], function (formatter, ResourceModel) {
     "use strict";
     QUnit.module("Formatters", {
         setup: function () {
@@ -20,9 +19,6 @@ sap.ui.define([
         }
     });
 
-//    sinon.stub(i18n, "i18nText", function (input) {
-//        return input;
-//    });
     QUnit.test("chartData", function (assert) {
         // Arrange
         var oViewStub = {
