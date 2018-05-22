@@ -2,15 +2,40 @@
 
 sap.ui.define([
     "cz/muni/fi/pb138/mobilePresence/model/formatter",
+    "sap/ui/model/resource/ResourceModel",
+    "cz/muni/fi/pb138/mobilePresence/model/i18n",
     "sap/ui/thirdparty/sinon",
-    "cz/muni/fi/pb138/mobilePresence/model/i18n"
-], function (oFormatter, sinon, i18n) {
+    "sap/ui/thirdparty/sinon-qunit",
+    "sap/ui/model/resource/ResourceModel",
+], function (formatter, ResourceModel, i18n) {
     "use strict";
-    QUnit.module("Formatters");
-    sinon.stub(i18n, "i18nText", function (input) {
-        return input;
+    QUnit.module("Formatters", {
+        setup: function () {
+            this._oResourceModel = new ResourceModel({
+                bundleUrl: jQuery.sap.getModulePath("cz.muni.fi.pb138.mobilePresence", "/i18n/i18n_en.properties")
+            });
+        },
+        teardown: function () {
+            this._oResourceModel.destroy();
+        }
     });
+
+//    sinon.stub(i18n, "i18nText", function (input) {
+//        return input;
+//    });
     QUnit.test("chartData", function (assert) {
+        // Arrange
+        var oViewStub = {
+            getModel: this.stub().withArgs("i18n").returns(this._oResourceModel)
+        };
+        var oControllerStub = {
+            getView: this.stub().returns(oViewStub)
+        };
+
+        // System under test
+        var fnIsolatedFormatter = formatter.chartData.bind(oControllerStub);
+
+        // Assert
 
         var format = {
             "datasets": [{}, {}]
@@ -23,15 +48,28 @@ sap.ui.define([
                 {
                     "datasets": [
                         {data: [1, 2, 3],
-                            label: "workday"},
+                            label: "Workday"},
                         {data: [4, 5, 6],
-                            label: "weekend"}
+                            label: "Weekend"}
                     ]
                 };
-        var result = oFormatter.chartData(format, data);
-        assert.deepEqual(result, expected, "Set data and labels");
+        var result = fnIsolatedFormatter(format, data);
+        assert.deepEqual(result, expected, "Chart data set correctly");
     });
+
     QUnit.test("chartOptions", function (assert) {
+        // Arrange
+        var oViewStub = {
+            getModel: this.stub().withArgs("i18n").returns(this._oResourceModel)
+        };
+        var oControllerStub = {
+            getView: this.stub().returns(oViewStub)
+        };
+
+        // System under test
+        var fnIsolatedFormatter = formatter.chartOptions.bind(oControllerStub);
+
+        // Assert
 
         var format =
                 {scales: {
@@ -48,22 +86,42 @@ sap.ui.define([
                 "xAxes": [
                     {
                         "scaleLabel": {
-                            "labelString": "time"
+                            "labelString": "Time"
                         }
                     }
                 ],
                 "yAxes": [
                     {
                         "scaleLabel": {
-                            "labelString": "mobileCount"
+                            "labelString": "Connected Device Count"
                         }
                     }
                 ]
             }
         };
 
-        var result = oFormatter.chartOptions(format);
-        assert.deepEqual(result, expected, "Set Options");
+        var result = fnIsolatedFormatter(format);
+        assert.deepEqual(result, expected, "Chart Options set correctly");
     });
+
+    QUnit.test("i18nText", function (assert) {
+        // Arrange
+        var oViewStub = {
+            getModel: this.stub().withArgs("i18n").returns(this._oResourceModel)
+        };
+        var oControllerStub = {
+            getView: this.stub().returns(oViewStub)
+        };
+
+        // System under test
+        var fnIsolatedFormatter = formatter.i18nText.bind(oControllerStub);
+
+        // Assert
+        assert.strictEqual(fnIsolatedFormatter("undefined text"),"undefined text", "Undefined text remains untranslated - correct");
+        assert.strictEqual(fnIsolatedFormatter("kraj"),"Region", "Region translated correctly");
+        assert.strictEqual(fnIsolatedFormatter("city"),"City", "City translated correctly");
+        assert.strictEqual(fnIsolatedFormatter("time"),"Time", "Time translated correctly");
+    });
+
 }
 );
