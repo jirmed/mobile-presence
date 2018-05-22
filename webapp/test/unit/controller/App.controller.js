@@ -8,7 +8,7 @@ sap.ui.define([
 
     QUnit.module("App Controller");
 
-    QUnit.test("I should test the app controller", function (assert) {
+    QUnit.test("Init", function (assert) {
 
         var oAppController = new oController();
 
