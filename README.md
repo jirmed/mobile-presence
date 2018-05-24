@@ -46,7 +46,7 @@ The data were caputred in September-October 2016 and are available [here](https:
 ## Authors
 
 * [**Jiří Medveď**](https://cz.linkedin.com/in/jirmed) - *Web application* 
-* **Sebastián Bröstl** - *Source data transformation* 
+* **Sebastián Bröstl** - *Source data transformation* - https://github.com/bosysebi/dataTransformation
 
 
 ## License
