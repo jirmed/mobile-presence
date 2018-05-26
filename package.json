@@ -4,7 +4,9 @@
   "description": "Best-practice starting point for building a freestyle app",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "grunt",    
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"    
   },
   "devDependencies": {
     "eslint-plugin-openui5": "0.1.0",
