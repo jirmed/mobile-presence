@@ -4,7 +4,7 @@ sap.ui.define([
 	"use strict";
 
 	function getFrameUrl (sHash, sUrlParameters) {
-		var sUrl = jQuery.sap.getResourcePath("cz/muni/fi/pb138/mobilePresence/app", ".html");
+		var sUrl = jQuery.sap.getResourcePath("cz/muni/fi/pb138/mobilePresence/app/", ".html");
 		sHash = sHash || "";
 		sUrlParameters = sUrlParameters ? "?" + sUrlParameters : "";
 
